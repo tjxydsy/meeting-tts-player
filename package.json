@@ -1,0 +1,23 @@
+{
+  "name": "meeting-tts-player",
+  "version": "1.0.0",
+  "description": "桌面会议 TTS 播放器 — 打开 JSON 会议记录，点击朗读",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder --win",
+    "build:dir": "electron-builder --win --dir",
+    "build:nsis": "electron-builder --win --nsis",
+    "build:zip": "electron-builder --win --zip"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}

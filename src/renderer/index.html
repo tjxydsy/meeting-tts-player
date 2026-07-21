@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meeting TTS Player</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- 拖放覆盖层 -->
+<div class="drop-overlay" id="dropOverlay">
+  <div class="drop-overlay-content">
+    <div class="drop-icon">📂</div>
+    <div>释放文件以加载</div>
+  </div>
+</div>
+
+<!-- 顶部栏 -->
+<div class="header">
+  <h1>📋 <span id="headerTitle">Meeting TTS Player</span></h1>
+  <div class="header-right">
+    <span class="info" id="headerStats"></span>
+    <button class="btn-open" id="btnOpenFile" title="打开 JSON 文件 (Ctrl+O)">📂 打开文件</button>
+    <button class="btn-open" id="btnExport" title="导出为 HTML (Ctrl+S)" disabled>💾 导出 HTML</button>
+  </div>
+</div>
+
+<!-- 发言人筛选 -->
+<div class="speaker-filters" id="filters"></div>
+
+<!-- 空状态 -->
+<div class="empty-state" id="emptyState">
+  <div class="empty-icon">🎙️</div>
+  <h2>会议 TTS 播放器</h2>
+  <p>打开 JSON 会议记录文件，点击段落即可朗读</p>
+  <p class="empty-hint">拖放文件到此处 · Ctrl+O 打开 · 支持多种 JSON 格式</p>
+</div>
+
+<!-- 消息列表 -->
+<div class="container" id="messages"></div>
+
+<!-- 错误提示 -->
+<div class="error-toast" id="errorToast"></div>
+
+<!-- 底部播放栏 -->
+<div class="player-bar" id="playerBar">
+  <div class="playing-info">
+    <div class="playing-name" id="playingName"></div>
+    <div class="playing-text" id="playingText"></div>
+  </div>
+  <select class="speed-select" id="speedSelect">
+    <option value="0.5">0.5x</option>
+    <option value="0.75">0.75x</option>
+    <option value="1">1x</option>
+    <option value="1.25">1.25x</option>
+    <option value="1.5">1.5x</option>
+    <option value="2" selected>2x</option>
+  </select>
+  <button class="btn-prev" id="btnPrev" title="上一段 (←)">◀</button>
+  <button class="btn-stop" id="btnStop">⏹ 停止</button>
+  <button class="btn-next" id="btnNext" title="下一段 (→)">▶</button>
+</div>
+
+<script src="player.js"></script>
+</body>
+</html>
